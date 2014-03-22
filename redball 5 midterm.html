@@ -1,0 +1,436 @@
+<html>
+	<head>
+		<style>.ball{
+						position:absolute;
+						left:200px;
+						
+					}
+					
+				.arrow{
+						width:50px;
+						hight:50px;
+					  }
+				.column{
+				
+						width:50px;
+						hight:50px;
+				
+						}	
+				  #pinkball	{
+								position:absolute;
+								left:65%;
+								top:20%;
+							}	
+				#redball{
+							position:absolute;
+							left:60%;
+							top:65%;
+						}	
+						
+				#greenball{
+							position:absolute;
+							left:10%;
+							top:60%;
+						}		
+				#blueball{
+					        position:absolute;
+					        left:57%
+					        top:30%	
+					     }	
+						
+						.top {
+                      position: fixed;
+                      top: 0;
+                             }
+                      .left {
+                          position: fixed;
+                          left: 0;
+                            }
+                      .right {
+                          position: fixed;
+                          right: 0;
+                             }
+                      .bottom {
+                          position: fixed;
+                          bottom: 0;
+                             }
+                      						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+		</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js">
+</script>
+	</head>
+	<script>
+	$(function () {
+	    $("#bul").click(function () {
+	        blueball.moveupleft();
+	    });
+	    $("#bu").click(function () {
+	        blueball.moveup();
+	    });
+	    $("#bur").click(function () {
+	        blueball.moveupright();
+	    });
+	    $("#bl").click(function () {
+	        blueball.moveleft();
+	    });
+	    $("#br").click(function () {
+	        blueball.moveright();
+	    });
+	    $("#bdl").click(function () {
+	        blueball.movedownleft();
+	    });
+	    $("#bd").click(function () {
+	        blueball.movedown();
+	    });
+	    $("#bdr").click(function () {
+	        blueball.movedownright();
+	    });
+	});
+	$(function () {
+	    $("#gul").click(function () {
+	        greenball.moveupleft();
+	    });
+	    $("#gu").click(function () {
+	        greenball.moveup();
+	    });
+	    $("#gur").click(function () {
+	        greenball.moveupright();
+	    });
+	    $("#gl").click(function () {
+	        greenball.moveleft();
+	    });
+	    $("#gr").click(function () {
+	        greenball.moveright();
+	    });
+	    $("#gdl").click(function () {
+	        greenball.movedownleft();
+	    });
+	    $("#gd").click(function () {
+	        greenball.movedown();
+	    });
+	    $("#gdr").click(function () {
+	        greenball.movedownright();
+	    });
+	});
+	$(function () {
+	    $("#rul").click(function () {
+	        redball.moveupleft();
+	    });
+	    $("#ru").click(function () {
+	        redball.moveup();
+	    });
+	    $("#rur").click(function () {
+	        redball.moveupright();
+	    });
+	    $("#rl").click(function () {
+	        redball.moveleft();
+	    });
+	    $("#rr").click(function () {
+	        redball.moveright();
+	    });
+	    $("#rdl").click(function () {
+	        redball.movedownleft();
+	    });
+	    $("#rd").click(function () {
+	        redball.movedown();
+	    });
+	    $("#rdr").click(function () {
+	        redball.movedownright();
+	    });
+	});
+	$(function () {
+	    $("#pul").click(function () {
+	        pinkball.moveupleft();
+	    });
+	    $("#pu").click(function () {
+	        pinkball.moveup();
+	    });
+	    $("#pur").click(function () {
+	        pinkball.moveupright();
+	    });
+	    $("#pl").click(function () {
+	        pinkball.moveleft();
+	    });
+	    $("#pr").click(function () {
+	        pinkball.moveright();
+	    });
+	    $("#pdl").click(function () {
+	        pinkball.movedownleft();
+	    });
+	    $("#pd").click(function () {
+	        pinkball.movedown();
+	    });
+	    $("#pdr").click(function () {
+	        pinkball.movedownright();
+	    });
+	});
+
+	function Ball(cssid)
+	{
+	
+	this.moveright=function ()
+				{
+				var position=$(cssid).offset();
+				console.log("left "+position.left);
+				console.log("top "+position.top);
+				position.left=position.left+20;
+				$(cssid).offset(position);
+				}
+
+				
+				this.movedown=function ()
+				{
+				var position=$(cssid).offset();
+				console.log("top "+position.top);
+				position.top=position.top+20;
+				$(cssid).offset(position);
+				}
+
+				this.moveup=function ()
+				{
+				var position=$(cssid).offset();
+				console.log("top "+position.top);
+				position.top=position.top-20;
+				$(cssid).offset(position);
+				}
+	
+				this.moveleft=function()
+				{
+				var position=$(cssid).offset();
+				console.log("left "+position.left);
+				position.left=position.left-20;
+				$(cssid).offset(position);
+				}
+
+				
+				this.moveupleft=function()
+				{
+				var position=$(cssid).offset();
+				console.log("left "+position.left);
+				console.log("top "+position.top);
+				position.left=position.left-20;
+				position.top=position.top-20;
+				$(cssid).offset(position);
+				}
+
+				this.moveupright=function()
+				{
+				var position=$(cssid).offset();
+				console.log("left "+position.left);
+				console.log("top "+position.top);
+				position.left=position.left+20;
+				position.top=position.top-20;
+				$(cssid).offset(position);
+				}
+
+				this.movedownleft=function()
+				{
+				var position=$(cssid).offset();
+				console.log("left "+position.left);
+				console.log("top "+position.top);
+				position.left=position.left-20;
+				position.top=position.top+20;
+				$(cssid).offset(position);
+				}
+
+				this.movedownright=function()
+				{
+				var position=$(cssid).offset();
+				console.log("left "+position.left);
+				console.log("top "+position.top);
+				position.left=position.left+20;
+				position.top=position.top+20;
+				$(cssid).offset(position);
+				}
+	
+			
+	}
+			var redball=new Ball("#redball");
+			var greenball=new Ball("#greenball");
+			var blueball=new Ball("#blueball");
+			var pinkball=new Ball("#pinkball");
+	
+	</script>
+
+</head>
+<body>
+		
+		<img src="redball1.png" id="redball" class="ball"/>
+		<img src="greenball.png" id="greenball"class="ball"/>
+		<img src="blueball.png" id="blueball" class="ball"/>
+		<img src="pinkball.png" id="pinkball" class="ball"/>
+		
+		<!--Pink table-->
+		<table class="top right	">
+	
+	<tbody>
+	<tr>
+		<td class="column">
+		<img id="pul" src="Lup.jpg"  class="arrow" /></td>
+		
+		<td class="column">
+		<img id="pu" src="up.jpg" class="arrow"/></td>
+		
+		<td class="column">
+		<img id="pur" src="Rup.jpg" class="arrow" /></td>
+	</tr>
+		
+	<tr>
+		<td class="column">
+		<img id="pl" src="left.jpg" class="arrow"/></td>
+		
+		<td class="column">
+		<img src="pinkball.png" class="arrow"/></td>
+		
+		<td class="column">
+		<img id="pr" src="right.jpg" class="arrow"/></td>
+	</tr>
+		
+	<tr>
+		<td class="column"> 
+		<img id="pdl" src="Ldown.jpg" class="arrow" /></td>
+		
+		<td class="column"> 
+		<img id="pd" src="down.jpg" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img id="pdr" src="Rdown.jpg" class="arrow" /></td>
+	
+	</tr>
+		</tbody>
+	</table>
+
+		<!--redball-->	
+		<table class="bottom right">
+	<tbody>
+	<tr>
+		<td id="rul" class="column">
+		<img src="Lup.jpg" class="arrow" /></td>
+		
+		<td class="column">
+		<img id="ru" src="up.jpg" class="arrow"/></td>
+		
+		<td class="column">
+		<img id="rur" src="Rup.jpg" class="arrow" /></td>
+	</tr>
+		
+	<tr>
+		<td class="column"> 
+		<img id="rl" src="left.jpg" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img  src="redball1.png" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img id="rr" src="right.jpg" class="arrow"/></td>
+	</tr>
+		
+	<tr>
+		<td class="column"> 
+		<img id="rdl" src="Ldown.jpg" class="arrow" /></td>
+		
+		<td class="column"> 
+		<img id="rd" src="down.jpg" class="arrow"/></td>
+		
+		<td class="column">
+		<img id="rdr" src="Rdown.jpg" class="arrow" /></td>
+	
+	</tr>
+		</tbody>
+	</table>
+		
+		<!--greenball-->	
+		<table class="bottom left" >
+	<tbody>
+	<tr>
+		<td class="column"> 
+		<img id="gul" src="Lup.jpg" class="arrow" /></td>
+		
+		<td class="column"> 
+		<img id="gu" src="up.jpg" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img id="gur" src="Rup.jpg" class="arrow" /></td>
+	</tr>                   
+		                    
+	<tr>                    
+		<td class="column"> 
+		<img id="gl" src="left.jpg" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img src="greenball.png" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img id="gr" src="right.jpg" class="arrow"/></td>
+	</tr>                   
+		                    
+	<tr>                    
+		<td class="column"> 
+		<img id="gdl" src="Ldown.jpg" class="arrow" /></td>
+		
+		<td class="column"> 
+		<img id="gd" src="down.jpg" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img id="gdr" src="Rdown.jpg" class="arrow" /></td>
+	
+	</tr>
+		</tbody>
+	</table>
+	
+		<!--blueball-->	
+		<table class="top left">
+	<tbody>
+	<tr>
+		<td class="column"> 
+		<img id="bul" src="Lup.jpg" class="arrow" /></td>
+		
+		<td class="column"> 
+		<img id="bu" src="up.jpg" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img id="bur" src="Rup.jpg" class="arrow" /></td>
+	</tr>                   
+		                    
+	<tr>                    
+		<td class="column"> 
+		<img id="bl" src="left.jpg" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img src="blueball.png" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img id="br" src="right.jpg" class="arrow"/></td>
+	</tr>                   
+		                    
+	<tr>                    
+		<td class="column"> 
+		<img id="bdl" src="Ldown.jpg" class="arrow" /></td>
+		
+		<td class="column"> 
+		<img id="bd" src="down.jpg" class="arrow"/></td>
+		
+		<td class="column"> 
+		<img id="bdr" src="Rdown.jpg" class="arrow" /></td>
+	
+	</tr>
+		</tbody>
+	</table>
+	
+	
+</body>
+</head>
+</html>

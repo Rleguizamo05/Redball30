@@ -1,0 +1,17 @@
+Define wall
+
+set wall vaule for bottom 
+set wall value for top 
+set wall value for left 
+set wall value for right 
+
+Define ball 
+ 
+
+  move ball right 
+  get ball position 
+  if greater than wall value for right 
+  then move ball left 
+;End if 
+
+
